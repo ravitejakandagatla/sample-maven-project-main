@@ -1,13 +1,26 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-    stage('maven install') {
-      steps {
-
-        sh 'mvn clean install'
-
-      }
+  stage('build') {
+    steps {
+      echo 'Building...'
     }
-
   }
+
+  stage('test') {
+    steps {
+      echo 'Testing...'
+    }
+  }
+
+  stage('deploy') {
+    steps {
+      echo 'Deploying...'
+      echo 'Done!'
+    }
+  }
+
+}
+
 }
